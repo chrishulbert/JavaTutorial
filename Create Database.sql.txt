@@ -1,0 +1,45 @@
+CREATE TABLE [event_person] (
+  [event_id] [int] NOT NULL,
+  [person_id] [int] NOT NULL,
+  CONSTRAINT [PK_event_person] PRIMARY KEY CLUSTERED 
+  (
+    [event_id] ASC,
+    [person_id] ASC
+  )
+)
+
+CREATE TABLE [events] (
+  [id] [int] IDENTITY(1,1) NOT NULL,
+  [dt] [datetime] NULL,
+  [name] [nvarchar](50) NULL,
+  CONSTRAINT [PK_events] PRIMARY KEY CLUSTERED 
+  (
+    [id] ASC
+  )
+)
+
+CREATE TABLE [people] (
+  [id] [int] IDENTITY(1,1) NOT NULL,
+  [name] [varchar](50) NOT NULL,
+  CONSTRAINT [PK_people] PRIMARY KEY CLUSTERED 
+  (
+    [id] ASC
+  )
+)
+
+insert into events(dt,name)
+values ('2009-12-31','New Years Eve')
+
+insert into events(dt,name)
+values ('2010-1-1','New Years Day')
+
+insert into people(name)
+values ('John Smith')
+
+insert into people(name)
+values ('Jane Doe')
+
+insert into event_person(event_id,person_id)
+select events.id, people.id
+from events,people
+where people.name='Jane Doe'

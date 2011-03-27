@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+		<property name="connection.url">jdbc:jtds:sqlserver://my-database-server/LearnJavaHibernate</property>
+		<property name="connection.username">LearnJavaHibernate</property>
+		<property name="connection.password">LearnJavaHibernate</property>
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+
+		<!--
+			Enable c3p0 connection pooling, because hibernate pooling is not
+			prod-ready. Apparently connection.provider_class is needed in
+			hibernate 3+
+		-->
+		<property name="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+		<property name="c3p0.max_size">100</property>
+		<property name="c3p0.min_size">1</property>
+		<property name="c3p0.idle_test_period">30</property>
+
+		<!-- Echo all executed SQL to stdout for debugging -->
+		<property name="show_sql">true</property>
+
+		<!-- All the entity classes for hibernate to check for annotations here-->
+		<mapping class="data.Event" />
+		<mapping class="data.Person" />
+	</session-factory>
+</hibernate-configuration>

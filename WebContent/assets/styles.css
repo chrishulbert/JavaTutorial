@@ -1,0 +1,80 @@
+html, body, p, h1, h2, h3 {
+  margin:0;
+  border:0;
+  padding:0;
+}
+body {
+  background:black url(bg.jpg) center top no-repeat;
+  color:white;
+  font-family:trebuchet ms;
+  width:800px;
+  margin:auto;
+}
+.header {
+  height:100px;
+  line-height:100px;
+  padding-left:10px;
+}
+
+.tabs {
+  height:30px;
+  line-height:30px;
+}
+.tabs a {
+  float:left;
+  background: url(alpha-b.png);
+  padding: 0 5px 0 5px;
+  margin-right:10px;
+  color: white;
+}
+.tabs a.s {
+  background: url(alpha-w.png);
+}
+.tabs-under {
+  color:black;
+}
+.tabs-under a {
+  color:black;
+  line-height:30px;
+  padding-left:5px; 
+}
+.tabs-under-bg {
+  background: url(alpha-w.png);
+  position:absolute;
+  left:0;
+  width:100%;
+  height:30px;
+  z-index:-1;
+}
+.tabs a, .tabs-under a {
+  font-weight:bold;
+  text-decoration:none;
+}
+.tabs a:hover, .tabs-under a:hover {
+  text-decoration:underline;
+}
+.bodyhead {
+  margin-top: 20px;
+  height:40px;
+  line-height:40px;
+  background: url(alpha-b.png);
+  padding-left:10px;
+}
+.body {
+  background:white;
+  color:black;
+  padding:5px;
+}
+
+input {
+	padding: 5px;
+}
+.body a {
+	color:black;
+}
+.body a:hover {
+	background:yellow;
+}
+form {
+	display:inline;
+}

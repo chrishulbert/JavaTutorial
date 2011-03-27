@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" /> <!-- set to false for prod -->
+
+	<package name="events" namespace="/events" extends="struts-default">
+		<action name="*" class="actions.events.{1}">
+			<result>/views/events/{1}.jsp</result>
+			<result name="redirect" type="redirect">${redirectUrl}</result>
+		</action>
+	</package>
+
+	<package name="people" namespace="/people" extends="struts-default">
+		<action name="*" class="actions.people.{1}">
+			<result>/views/people/{1}.jsp</result>
+			<result name="redirect" type="redirect">${redirectUrl}</result>
+		</action>
+	</package>
+
+	<package name="root-redirect" namespace="/" extends="struts-default">
+		<action name="">
+			<result type="redirect">events/Listing.action</result>
+		</action>
+	</package>
+
+</struts>
